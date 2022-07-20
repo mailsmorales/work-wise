@@ -4,7 +4,8 @@ import homeIcon from "@/assets/images/icon1.png";
 import companiesIcon from "@/assets/images/icon2.png";
 import projectsIcon from "@/assets/images/icon3.png";
 import profilesIcon from "@/assets/images/icon4.png";
-import profilesIcon from "@/assets/images/icon4.png";
+import jobsIcon from "@/assets/images/icon5.png";
+import messagesIcon from "@/assets/images/icon6.png"
 
 
 // import { UserAccount } from "./UserAccount/UserAccount";
@@ -89,7 +90,7 @@ export const Header = () => {
               <li>
                 <a href="jobs.html" title="">
                   <span>
-                    <img src="images/icon5.png" alt="" />
+                    <img src={jobsIcon} alt="Jobs" />
                   </span>
                   Jobs
                 </a>
@@ -97,7 +98,7 @@ export const Header = () => {
               <li>
                 <a href="#" title="" className="not-box-openm">
                   <span>
-                    <img src="images/icon6.png" alt="" />
+                    <img src={messagesIcon} alt="Messages" />
                   </span>
                   Messages
                 </a>
