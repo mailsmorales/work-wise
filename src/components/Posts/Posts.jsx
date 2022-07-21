@@ -125,7 +125,7 @@ export const Posts = () => {
                 </li>
                 <li>
                   <a href="#" className="com">
-                    <i className="fa fa-comment"></i> Comment{" "}
+                    <i className="fas fa-comment-alt"></i> Comment{" "}
                     {post.comments.length}
                   </a>
                 </li>
