@@ -1,9 +1,7 @@
-// import './App.css'
-import { Header } from './components/Header/Header'
-import { Home } from './pages/Home/Home'
+import { Header } from "./components/Header/Header";
+import { Home } from "./pages/Home/Home";
 
 function App() {
-
   return (
     <div className="App">
       <div className="wrapper">
@@ -11,7 +9,7 @@ function App() {
         <Home />
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

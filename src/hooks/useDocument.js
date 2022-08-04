@@ -16,7 +16,7 @@ export const getDocumentRealTime = (collectionName, id) => {
           setDocument({ ...snap.data(), id: snap.id });
           setError(null);
         } else {
-          setError("Такого проекта нет!!!");
+          setError("Такого проекта нет!");
         }
       },
       (err) => {
@@ -31,15 +31,11 @@ export const getDocumentRealTime = (collectionName, id) => {
 };
 
 export const addDocument = async (collectionName, newDoc) => {
-  const [error, setError] = useState(null);
   const collectionRef = collection(firestore, collectionName);
 
   try {
-    await addDoc(collectionRef, newDoc);
-    setError(null);
+    return await addDoc(collectionRef, newDoc);
   } catch (err) {
-    setError(err.message);
+    return err.message;
   }
-
-  return { error };
 };
