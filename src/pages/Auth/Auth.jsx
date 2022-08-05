@@ -17,6 +17,22 @@ const useStyles = makeStyles((theme) => ({
 export const Auth = () => {
   const classes = useStyles();
   const [showLogin, setShowLogin] = useState(true);
+
+  const authTabsController = () => (
+    <ul className="sign-control">
+      <li data-tab="tab-1" className="current">
+        <a href="#" title="">
+          Sign in
+        </a>
+      </li>
+      <li data-tab="tab-2">
+        <a href="#" title="">
+          Sign up
+        </a>
+      </li>
+    </ul>
+  );
+
   return (
     <Box className={classes.root}>
       <div className="sign-in-page">
@@ -37,8 +53,8 @@ export const Auth = () => {
                 </div>
               </div>
               <div className="col-lg-6">
-                {showLogin && <Login />}
-                {!showLogin && <SignUp />}
+                {showLogin && <Login>{authTabsController}</Login>}
+                {!showLogin && <SignUp> {authTabsController}</SignUp>}
               </div>
             </div>
           </div>

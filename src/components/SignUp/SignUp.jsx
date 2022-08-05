@@ -1,8 +1,9 @@
 import React from "react";
 
-export const SignUp = () => {
+export const SignUp = ({ children }) => {
   return (
     <div className="login-sec">
+      {children && children}
       <div className="sign_in_sec current">
         <div className="signup-tab">
           <i className="fa fa-long-arrow-left"></i>

@@ -3,6 +3,18 @@ import { Typography } from "@mui/material";
 export const Login = () => {
   return (
     <div className="login-sec">
+      <ul className="sign-control">
+        <li data-tab="tab-1" className="current">
+          <a href="#" title="">
+            Sign in
+          </a>
+        </li>
+        <li data-tab="tab-2">
+          <a href="#" title="">
+            Sign up
+          </a>
+        </li>
+      </ul>
       <div className="sign_in_sec current">
         <Typography variant="h3">Sign in</Typography>
         <h3>Sign in</h3>
