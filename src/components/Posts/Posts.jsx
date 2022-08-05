@@ -24,7 +24,7 @@ export const Posts = () => {
                 <div className="usy-name">
                   <h3>{post.author.name}</h3>
                   <span>
-                    <img src={likeIcon} alt="" />3 min ago
+                    <img src="images/clock.png" alt="" />3 min ago
                   </span>
                 </div>
               </div>
@@ -58,7 +58,7 @@ export const Posts = () => {
                       Hide
                     </a>
                   </li>
-                </ul> 
+                </ul>
               </div>
             </div>
             <div className="epi-sec">
