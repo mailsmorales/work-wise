@@ -18,14 +18,20 @@ export const Auth = () => {
   const classes = useStyles();
   const [showLogin, setShowLogin] = useState(true);
 
-  const authTabsController = () => (
+  const AuthTabsController = () => (
     <ul className="sign-control">
-      <li data-tab="tab-1" className="current">
+      <li
+        className={showLogin ? "current" : ""}
+        onClick={() => setShowLogin(true)}
+      >
         <a href="#" title="">
           Sign in
         </a>
       </li>
-      <li data-tab="tab-2">
+      <li
+        className={!showLogin ? "current" : ""}
+        onClick={() => setShowLogin(false)}
+      >
         <a href="#" title="">
           Sign up
         </a>
@@ -53,8 +59,17 @@ export const Auth = () => {
                 </div>
               </div>
               <div className="col-lg-6">
-                {showLogin && <Login>{authTabsController}</Login>}
-                {!showLogin && <SignUp> {authTabsController}</SignUp>}
+                {showLogin && (
+                  <Login>
+                    <AuthTabsController />
+                  </Login>
+                )}
+                {!showLogin && (
+                  <SignUp>
+                    {" "}
+                    <AuthTabsController />
+                  </SignUp>
+                )}
               </div>
             </div>
           </div>
