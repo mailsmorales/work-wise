@@ -5,6 +5,7 @@ import "@/assets/styles/index.css";
 import { BrowserRouter } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+
 const theme = createTheme({
   palette: {
     primary: {

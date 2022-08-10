@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 export const SignUp = ({ children }) => {
+  const [form, setForm] = useState({
+    fullname: "",
+  });
   return (
     <div className="login-sec">
       {children && children}
-      <div className="sign_in_sec current">
+      <div className="sign_in_sec" >
         <div className="signup-tab">
           <i className="fa fa-long-arrow-left"></i>
           <h2>johndoe@example.com</h2>
