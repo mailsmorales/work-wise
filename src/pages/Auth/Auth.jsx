@@ -14,30 +14,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const AuthTabsController = ({ showLogin, setShowLogin }) => (
+  <ul className="sign-control">
+    <li className={showLogin ? "current" : ""}>
+      <a href="#" title="" onClick={() => setShowLogin(true)}>
+        Sign in
+      </a>
+    </li>
+    <li className={!showLogin ? "current" : ""}>
+      <a href="#" title="" onClick={() => setShowLogin(false)}>
+        Sign up
+      </a>
+    </li>
+  </ul>
+);
+
 export const Auth = () => {
   const classes = useStyles();
   const [showLogin, setShowLogin] = useState(true);
-
-  const AuthTabsController = () => (
-    <ul className="sign-control">
-      <li
-        className={showLogin ? "current" : ""}
-        onClick={() => setShowLogin(true)}
-      >
-        <a href="#" title="">
-          Sign in
-        </a>
-      </li>
-      <li
-        className={!showLogin ? "current" : ""}
-        onClick={() => setShowLogin(false)}
-      >
-        <a href="#" title="">
-          Sign up
-        </a>
-      </li>
-    </ul>
-  );
 
   return (
     <Box className={classes.root}>
@@ -59,15 +53,19 @@ export const Auth = () => {
                 </div>
               </div>
               <div className="col-lg-6">
-                {showLogin && (
+                {showLogin ? (
                   <Login>
-                    <AuthTabsController />
+                    <AuthTabsController
+                      showLogin={showLogin}
+                      setShowLogin={setShowLogin}
+                    />
                   </Login>
-                )}
-                {!showLogin && (
+                ) : (
                   <SignUp>
-                    {" "}
-                    <AuthTabsController />
+                    <AuthTabsController
+                      showLogin={showLogin}
+                      setShowLogin={setShowLogin}
+                    />
                   </SignUp>
                 )}
               </div>
