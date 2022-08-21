@@ -17,12 +17,12 @@ const useStyles = makeStyles((theme) => ({
 const AuthTabsController = ({ showLogin, setShowLogin }) => (
   <ul className="sign-control">
     <li className={showLogin ? "current" : ""}>
-      <a href="#" title="" onClick={() => setShowLogin(true)}>
+      <a href="#" onClick={() => setShowLogin(true)}>
         Sign in
       </a>
     </li>
     <li className={!showLogin ? "current" : ""}>
-      <a href="#" title="" onClick={() => setShowLogin(false)}>
+      <a href="#" onClick={() => setShowLogin(false)}>
         Sign up
       </a>
     </li>

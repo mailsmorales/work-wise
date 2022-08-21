@@ -1,13 +1,22 @@
 import React, { useState } from "react";
+import { useSignup } from "hooks/useSignup";
 
 export const SignUp = ({ children }) => {
+  const { signup } = useSignup();
   const [form, setForm] = useState({
-    fullname: "",
+    username: "",
+    category: "",
+    country: "",
+    password: "",
+    confirmPassword: "",
   });
+
+const handleSubmit = () => {}
+
   return (
     <div className="login-sec">
       {children && children}
-      <div className="sign_in_sec" >
+      <div className="sign_in_sec">
         <div className="signup-tab">
           <i className="fa fa-long-arrow-left"></i>
           <h2>johndoe@example.com</h2>
