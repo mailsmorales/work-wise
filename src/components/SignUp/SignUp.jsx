@@ -11,7 +11,17 @@ export const SignUp = ({ children }) => {
     confirmPassword: "",
   });
 
-const handleSubmit = () => {}
+  const [confirmed, setConfirmed] = useState(false);
+
+  const handleChange = (event) => {
+    setForm((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+  };
+
+  const handleSubmit = async () => {
+    if (!confirmed) return;
+
+    await signup(form)
+  };
 
   return (
     <div className="login-sec">
@@ -34,23 +44,33 @@ const handleSubmit = () => {}
           </ul>
         </div>
         <div className="dff-tab current">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-lg-12 no-pdd">
                 <div className="sn-field">
-                  <input type="text" name="name" placeholder="Full Name" />
+                  <input
+                    type="text"
+                    name="username"
+                    onChange={handleChange}
+                    placeholder="Username"
+                  />
                   <i className="la la-user"></i>
                 </div>
               </div>
               <div className="col-lg-12 no-pdd">
                 <div className="sn-field">
-                  <input type="text" name="country" placeholder="Country" />
+                  <input
+                    type="text"
+                    name="country"
+                    onChange={handleChange}
+                    placeholder="Country"
+                  />
                   <i className="la la-globe"></i>
                 </div>
               </div>
               <div className="col-lg-12 no-pdd">
                 <div className="sn-field">
-                  <select>
+                  <select onChange={handleChange} name="category">
                     <option>Category</option>
                     <option>Category 1</option>
                     <option>Category 2</option>
@@ -69,6 +89,7 @@ const handleSubmit = () => {}
                     type="password"
                     name="password"
                     placeholder="Password"
+                    onChange={handleChange}
                   />
                   <i className="la la-lock"></i>
                 </div>
@@ -77,8 +98,9 @@ const handleSubmit = () => {}
                 <div className="sn-field">
                   <input
                     type="password"
-                    name="repeat-password"
+                    name="confirmPassword"
                     placeholder="Repeat Password"
+                    onChange={handleChange}
                   />
                   <i className="la la-lock"></i>
                 </div>
@@ -86,7 +108,13 @@ const handleSubmit = () => {}
               <div className="col-lg-12 no-pdd">
                 <div className="checky-sec st2">
                   <div className="fgt-sec">
-                    <input type="checkbox" name="cc" id="c2" />
+                    <input
+                      type="checkbox"
+                      name="cc"
+                      id="c2"
+                      onChange={(e) => setConfirmed(e.target.value)}
+                      value={confirmed}
+                    />
                     <label htmlFor="c2">
                       <span></span>
                     </label>
