@@ -17,10 +17,11 @@ export const SignUp = ({ children }) => {
     setForm((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     if (!confirmed) return;
 
-    await signup(form)
+    await signup(form);
   };
 
   return (
