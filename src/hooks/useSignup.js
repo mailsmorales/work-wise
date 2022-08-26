@@ -26,7 +26,7 @@ export const useSignup = () => {
 
       const usersRef = doc(firestore, "users", response.user.uid);
 
-      console.log(response.user.uid)
+      // console.log(response.user.uid)
 
       await setDoc(usersRef, {
         isOnline: true,
@@ -45,7 +45,7 @@ export const useSignup = () => {
       setIsPending(false);
       setError(null);
     } catch (error) {
-      console.log(error.message)
+      // console.log(error.message)
       setError(error.message);
       setIsPending(false);
     }
