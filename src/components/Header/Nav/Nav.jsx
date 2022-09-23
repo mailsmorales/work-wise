@@ -77,6 +77,7 @@ export const Nav = () => {
         </li>
         <Messages />
         <Notifications />
+        <div>wadawdawdawdawdwadawda</div>
       </ul>
     </nav>
   );
