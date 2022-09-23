@@ -27,6 +27,9 @@ export const Header = () => {
               <i className="fa fa-bars"></i>
             </a>
           </div>
+          <div>
+            wdawdawdawdawdawda
+          </div>
           <UserAccount />
         </div>
       </div>
